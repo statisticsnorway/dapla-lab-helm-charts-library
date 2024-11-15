@@ -9,7 +9,7 @@ metadata:
   name: {{ include "library-chart.fullname" . }}-serviceentry
   namespace: {{ .Release.Namespace }}
 spec:
-  # Limit effect of this service entry to only this namespace
+  {{/* Limit effect of this service entry to only this namespace */}}
   exportTo:
   - .
   hosts:
