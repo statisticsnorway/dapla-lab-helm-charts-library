@@ -24,9 +24,9 @@ stringData:
   GIT_USER_NAME: "{{ .Values.git.name }}"
   GIT_USER_MAIL: "{{ .Values.git.email }}"
   GIT_CREDENTIALS_CACHE_DURATION: "{{ .Values.git.cache }}"
-  GIT_PERSONAL_ACCESS_TOKEN: "{{ .Values.git.token }}"
-  GIT_REPOSITORY: "{{ .Values.git.repository }}"
-  GIT_BRANCH: "{{ .Values.git.branch }}"
+  GIT_PERSONAL_ACCESS_TOKEN: "{{ .Values.github.token }}"
+  GIT_REPOSITORY: "{{ .Values.github.repository }}"
+  GIT_BRANCH: "{{ .Values.github.branch }}"
 {{- end }}
 {{- end }}
 
