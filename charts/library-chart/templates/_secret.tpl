@@ -3,7 +3,7 @@
 
 {{/* Create the name of the secret Git to use */}}
 {{- define "library-chart.secretNameGit" -}}
-{{- if .Values.git.enabled }}
+{{- if .Values.gitConfig.git.enabled }}
 {{- $name:= (printf "%s-secretgit" (include "library-chart.fullname" .) )  }}
 {{- default $name .Values.git.secretName }}
 {{- else }}
@@ -13,7 +13,7 @@
 
 {{/* Template to generate a secret for git */}}
 {{- define "library-chart.secretGit" -}}
-{{- if .Values.git.enabled -}}
+{{- if .Values.gitConfig.git.enabled -}}
 apiVersion: v1
 kind: Secret
 metadata:
@@ -21,12 +21,12 @@ metadata:
   labels:
     {{- include "library-chart.labels" . | nindent 4 }}
 stringData:
-  GIT_USER_NAME: "{{ .Values.git.name }}"
-  GIT_USER_MAIL: "{{ .Values.git.email }}"
-  GIT_CREDENTIALS_CACHE_DURATION: "{{ .Values.git.cache }}"
-  GIT_PERSONAL_ACCESS_TOKEN: "{{ .Values.git.token }}"
-  GIT_REPOSITORY: "{{ .Values.git.repository }}"
-  GIT_BRANCH: "{{ .Values.git.branch }}"
+  GIT_USER_NAME: "{{ .Values.gitConfig.git.name }}"
+  GIT_USER_MAIL: "{{ .Values.gitConfig.git.email }}"
+  GIT_CREDENTIALS_CACHE_DURATION: "{{ .Values.gitConfig.git.cache }}"
+  GIT_PERSONAL_ACCESS_TOKEN: "{{ .Values.gitConfig.github.token }}"
+  GIT_REPOSITORY: "{{ .Values.gitConfig.github.repository }}"
+  GIT_BRANCH: "{{ .Values.gitConfig.github.branch }}"
 {{- end }}
 {{- end }}
 
