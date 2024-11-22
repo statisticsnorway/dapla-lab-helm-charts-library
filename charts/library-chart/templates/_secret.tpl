@@ -5,9 +5,9 @@
 {{- define "library-chart.secretNameGit" -}}
 {{- if .Values.gitConfig.git.enabled }}
 {{- $name:= (printf "%s-secretgit" (include "library-chart.fullname" .) )  }}
-{{- default $name .Values.git.secretName }}
+{{- default $name .Values.gitConfig.git.secretName }}
 {{- else }}
-{{- default "default" .Values.git.secretName }}
+{{- default "default" .Values.gitConfig.git.secretName }}
 {{- end }}
 {{- end }}
 
