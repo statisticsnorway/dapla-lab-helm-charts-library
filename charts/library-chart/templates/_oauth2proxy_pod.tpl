@@ -19,6 +19,7 @@ ports:
 args:
   - --config=/config/oauth2-proxy-client-config.yaml
   - --authenticated-emails-file=/config/oauth2-proxy-authenticated-emails.yaml
+  - --upstream-timeout=120s
 env:
   - name: OAUTH2_PROXY_CLIENT_ID
     valueFrom:
