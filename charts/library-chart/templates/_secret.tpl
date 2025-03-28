@@ -27,7 +27,7 @@ stringData:
   GIT_PERSONAL_ACCESS_TOKEN: "{{ .Values.gitConfig.github.token }}"
   GIT_REPOSITORY: "{{ .Values.gitConfig.github.repository }}"
   GIT_BRANCH: "{{ .Values.gitConfig.github.branch }}"
-  SSB_PROJECT_BUILD_ON_LAUNCH: "{{ .Values.gitConfig.ssbProject.build }}"
+  SSB_PROJECT_BUILD_ON_LAUNCH: "{{ .Values.gitConfig.github.build }}"
 {{- end }}
 {{- end }}
 
