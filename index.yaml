@@ -2,6 +2,14 @@ apiVersion: v1
 entries:
   library-chart:
   - apiVersion: v2
+    created: "2025-03-28T13:25:24.608181644Z"
+    digest: 2f65560c7729fa96c73d5f59c0c2ff496c0d4b83686431268f58a1b24371fef8
+    name: library-chart
+    type: library
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-library/releases/download/library-chart-4.2.13/library-chart-4.2.13.tgz
+    version: 4.2.13
+  - apiVersion: v2
     created: "2025-03-13T08:02:56.13994843Z"
     digest: ea0605a15e54c14287fa6a8d8503d81d08659e50343e868d85cd803a3fe5c896
     name: library-chart
@@ -121,4 +129,4 @@ entries:
     urls:
     - https://github.com/statisticsnorway/dapla-lab-helm-charts-library/releases/download/library-chart-4.0.0/library-chart-4.0.0.tgz
     version: 4.0.0
-generated: "2025-03-13T08:02:56.140091126Z"
+generated: "2025-03-28T13:25:24.608267085Z"
