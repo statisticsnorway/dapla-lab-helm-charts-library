@@ -11,7 +11,7 @@ return the pod configuration for oauth2-proxy which will run as a sidecar in our
 */}}
 {{- define "library-chart.oauth2ProxyPod" -}}
 name: oauth2-proxy
-image: bitnami/oauth2-proxy:7.6.0
+image: bitnami/oauth2-proxy:7.8.2
 imagePullPolicy: IfNotPresent
 ports:
   - name: http-oauth2
