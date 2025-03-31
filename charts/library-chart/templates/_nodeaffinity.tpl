@@ -14,8 +14,8 @@ We will use preferredNodeAffinity. Note that nodeSeelctor can be used togheter w
 {{- $nodepools = append $nodepools (dict "name" "standard320gb" "cpu" 80000 "mem" 320 "labels" (dict "node-type" "cpu")) -}}
 {{- $nodepools = append $nodepools (dict "name" "highmem640gb" "cpu" 80000 "mem" 640 "labels" (dict "node-size" "xlarge" "node-type" "memory")) -}}
 
-{{- $requestedCpu := required "'.Values.resources.requests.cpu' is required (in millicores)" .Values.resources.requests.cpu | int -}}
-{{- $requestedMem := required "'.Values.resources.requests.memory' is required (in Gi)" .Values.resources.requests.memory | int -}}
+{{- $requestedCpu := required "Argument must contain 'cpu' (in millicores) " .cpu | int -}}
+{{- $requestedMem := required "Argument must contain 'memory' (in Gi)" .memory | int -}}
 {{- $optimalNodePoolLabels := dict -}}
 
 {{- range $nodepool := $nodepools -}}
