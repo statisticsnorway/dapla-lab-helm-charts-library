@@ -1,0 +1,2 @@
+{{ include "library-chart.nodeAffinity" (dict "cpu" .Values.resources.cpu "memory" .Values.resources.memory) }}
+

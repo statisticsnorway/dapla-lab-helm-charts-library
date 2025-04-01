@@ -1,0 +1,12 @@
+apiVersion: v2
+name: library-chart-tests
+description: A Helm chart for testing library chart
+
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+
+dependencies:
+  - name: library-chart
+    version: 4.3.0
+    repository: file://../library-chart
