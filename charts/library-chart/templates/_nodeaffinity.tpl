@@ -1,9 +1,9 @@
 {{/* vim: set filetype=mustache: */}}
 
 {{/*
-We want to select the best node pool based on requested resources - i.e. prefer smalest node pool by memory -
-such that we can get the best utiliaztion of nodes which hopefully will mean lowest cost.
-We will use preferredNodeAffinity. Note that nodeSeelctor can be used togheter with this, to avoid scheduling on unwanted nodes.
+We want to select the best node pool based on requested resources - i.e. prefer smallest node pool by memory -
+such that we can get the best utilization of nodes which hopefully will mean lowest cost.
+We will use preferredNodeAffinity. Note that nodeSeelctor can be used together with this, to avoid scheduling on unwanted nodes.
 */}}
 {{- define "library-chart.nodeAffinity" -}}
 
