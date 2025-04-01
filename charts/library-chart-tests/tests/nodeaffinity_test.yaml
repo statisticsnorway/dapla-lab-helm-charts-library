@@ -1,0 +1,53 @@
+suite: test deployment
+templates:
+  - nodeaffinity.yaml
+tests:
+
+  - it: Cpu is required
+    set:
+      resources:
+        memory: "2"
+    asserts:
+      - failedTemplate:
+          errorMessage: "Argument must contain 'cpu' (in millicores)"
+  - it: Memory is required
+    set:
+      resources:
+        cpu: "2"
+    asserts:
+      - failedTemplate:
+          errorMessage: "Argument must contain 'memory' (in Gi)"
+  - it: Should return empty when CPU and Memory is to large
+    set:
+      resources:
+        cpu: 80001
+        memory: 641
+    asserts:
+      - notFailedTemplate: {}
+      - hasDocuments:
+          count: 0
+  - it: Should return nodeAffinity when CPU and Memory is inside range
+    set:
+      resources:
+        cpu: 80000
+        memory: 640
+    asserts:
+      - hasDocuments:
+          count: 1
+      - equal:
+          path: nodeAffinity
+          value:
+            preferredDuringSchedulingIgnoredDuringExecution:
+              - weight: 80
+                preference:
+                  nodeSelectorTerms:
+                    - matchExpressions:
+                        - key: node-size
+                          operator: In
+                          values:
+                            - "xlarge"
+                        - key: node-type
+                          operator: In
+                          values:
+                            - "memory"
+
