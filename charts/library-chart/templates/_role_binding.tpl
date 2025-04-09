@@ -13,7 +13,7 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: {{ .Values.kubernetes.role}}
+  name: view
 subjects:
 - kind: ServiceAccount
   name: {{ include "library-chart.serviceAccountName" . }}
