@@ -3,5 +3,5 @@
 {{/* Shared environment variables */}}
 {{- define "library-chart.commonEnvVars" -}}
 - name: STAT_TEMPLATE_DEFAULT_REFERENCE
-  value: "1.1.8"
+  value: "1.2.0"
 {{- end }}
