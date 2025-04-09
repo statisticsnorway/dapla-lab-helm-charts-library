@@ -40,14 +40,13 @@ tests:
             preferredDuringSchedulingIgnoredDuringExecution:
               - weight: 80
                 preference:
-                  nodeSelectorTerms:
-                    - matchExpressions:
-                        - key: node-size
-                          operator: In
-                          values:
-                            - "xlarge"
-                        - key: node-type
-                          operator: In
-                          values:
-                            - "memory"
+                  matchExpressions:
+                    - key: node-size
+                      operator: In
+                      values:
+                        - "xlarge"
+                    - key: node-type
+                      operator: In
+                      values:
+                        - "memory"
 
