@@ -30,13 +30,12 @@ nodeAffinity:
   preferredDuringSchedulingIgnoredDuringExecution:
   - weight: 80 {{- /* 80 is a bit random, but most to emphasise to k8s that this should really be considered */}}
     preference:
-      nodeSelectorTerms:
-      - matchExpressions:
-        {{- range $key, $value := $optimalNodePoolLabels }}
-        - key: {{ $key }}
-          operator: In
-          values:
-          - {{ $value | quote }}
-        {{- end }}
+      matchExpressions:
+      {{- range $key, $value := $optimalNodePoolLabels }}
+      - key: {{ $key }}
+        operator: In
+        values:
+        - {{ $value | quote }}
+      {{- end }}
 {{- end -}}
 {{- end -}}
