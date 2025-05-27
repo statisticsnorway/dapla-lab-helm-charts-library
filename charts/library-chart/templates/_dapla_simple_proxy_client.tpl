@@ -18,6 +18,9 @@ metadata:
 spec:
   redirectUris:
     - "https://{{ .Values.istio.hostname }}/oauth2/callback"
+    {{- if .Values.istio.extraHostname }}
+    - "https://{{ .Values.istio.extraHostname }}/oauth2/callback"
+    {{- end }}
   secretName: {{ include "library-chart.daplaSimpleProxyClientSecretName" . | quote }}
 
 {{- end }}
