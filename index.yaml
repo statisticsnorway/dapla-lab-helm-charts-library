@@ -2,6 +2,14 @@ apiVersion: v1
 entries:
   library-chart:
   - apiVersion: v2
+    created: "2025-05-27T14:30:55.005256238Z"
+    digest: dde8c49cc0f8a0118a766ebe70447fa2cab4eb899f0167ea7ae7f643e49abc46
+    name: library-chart
+    type: library
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-library/releases/download/library-chart-4.4.0/library-chart-4.4.0.tgz
+    version: 4.4.0
+  - apiVersion: v2
     created: "2025-04-09T14:19:58.369074871Z"
     digest: 72bdd03253b40e26cfeaa035309bdef8b8b13d4df5d0b9817b56a000de8694b1
     name: library-chart
@@ -180,6 +188,20 @@ entries:
   library-chart-tests:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2025-05-27T14:30:55.140165304Z"
+    dependencies:
+    - name: library-chart
+      repository: file://../library-chart
+      version: 4.4.0
+    description: A Helm chart for testing library chart
+    digest: 81ffce595c13bf5a3150b20d1baf24a6d01d5cf7b81cddaf2a6587d041a5438a
+    name: library-chart-tests
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-library/releases/download/library-chart-tests-1.0.2/library-chart-tests-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2025-04-09T11:53:28.709259295Z"
     dependencies:
     - name: library-chart
@@ -206,4 +228,4 @@ entries:
     urls:
     - https://github.com/statisticsnorway/dapla-lab-helm-charts-library/releases/download/library-chart-tests-1.0.0/library-chart-tests-1.0.0.tgz
     version: 1.0.0
-generated: "2025-04-09T14:19:58.369538005Z"
+generated: "2025-05-27T14:30:55.140426601Z"
