@@ -1,0 +1,85 @@
+suite: test deployment
+templates:
+  - virtualservice.yaml
+tests:
+
+  - it: Istio is not enabled
+    set:
+      istio:
+        gateways:
+          - "my-gateway"
+        hostname: "myhostname"
+        enabled: false
+        extraHosts: []
+      networking:
+        service:
+          port: 8080
+    asserts:
+      - notFailedTemplate: {}
+      - hasDocuments:
+          count: 0
+  - it: Template is rendered as expected happy path
+    set:
+      fullnameOverride: myapp
+      istio:
+        gateways:
+          - "my-gateway"
+        hostname: "myhostname"
+        enabled: true
+      networking:
+        service:
+          port: 8080
+    asserts:
+      - hasDocuments:
+          count: 1
+      - equal:
+          path: spec
+          value:
+            gateways:
+              - "my-gateway"
+            hosts:
+              - "myhostname"
+            http:
+              - name: ui
+                match:
+                  - uri:
+                      prefix: "/"
+                route:
+                  - destination:
+                      host: "myapp"
+                      port:
+                        number: 4180
+  - it: Template with extra host name
+    set:
+      fullnameOverride: myapp
+      istio:
+        gateways:
+          - "my-gateway"
+        hostname: "myhostname"
+        extraHostname: "extrahostname"
+        enabled: true
+      networking:
+        service:
+          port: 8080
+    asserts:
+      - hasDocuments:
+          count: 1
+      - equal:
+          path: spec
+          value:
+            gateways:
+              - "my-gateway"
+            hosts:
+              - "myhostname"
+              - "extrahostname"
+            http:
+              - name: ui
+                match:
+                  - uri:
+                      prefix: "/"
+                route:
+                  - destination:
+                      host: "myapp"
+                      port:
+                        number: 4180
+
