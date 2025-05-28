@@ -57,6 +57,7 @@ tests:
           - "my-gateway"
         hostname: "myhostname"
         extraHostname: "extrahostname"
+        serviceSubDomain: "random-subdomain"
         enabled: true
       networking:
         service:
@@ -71,7 +72,7 @@ tests:
               - "my-gateway"
             hosts:
               - "myhostname"
-              - "extrahostname"
+              - "random-subdomain.extrahostname"
             http:
               - name: ui
                 match:
