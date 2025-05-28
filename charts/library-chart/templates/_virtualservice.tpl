@@ -22,7 +22,7 @@ spec:
   hosts:
     - {{ .Values.istio.hostname | quote }}
     {{- if .Values.istio.extraHostname }}
-    - {{ .Values.istio.extraHostname | quote }}
+    - {{ .Values.istio.serviceSubDomain}}.{{ .Values.istio.extraHostname }}
     {{- end }}
   http:
     - name: ui
