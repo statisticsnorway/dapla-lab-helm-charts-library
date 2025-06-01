@@ -19,7 +19,7 @@ spec:
   redirectUris:
     - "https://{{ .Values.istio.hostname }}/oauth2/callback"
     {{- if .Values.istio.extraHostname }}
-    - "https://{{ .Values.istio.extraHostname }}/oauth2/callback"
+    - "https://{{ .Values.istio.serviceSubDomain}}.{{ .Values.istio.extraHostname }}/oauth2/callback"
     {{- end }}
   secretName: {{ include "library-chart.daplaSimpleProxyClientSecretName" . | quote }}
 

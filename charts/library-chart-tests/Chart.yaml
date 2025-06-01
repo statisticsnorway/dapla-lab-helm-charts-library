@@ -3,10 +3,10 @@ name: library-chart-tests
 description: A Helm chart for testing library chart
 
 type: application
-version: 1.0.3
+version: 1.0.4
 appVersion: "1.0.0"
 
 dependencies:
   - name: library-chart
-    version: 4.4.1
+    version: 4.4.2
     repository: file://../library-chart
