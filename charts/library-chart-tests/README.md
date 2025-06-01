@@ -1,6 +1,6 @@
 # library-chart-tests
 
-![Version: 1.0.3](https://img.shields.io/badge/Version-1.0.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
+![Version: 1.0.4](https://img.shields.io/badge/Version-1.0.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
 
 A Helm chart for testing library chart
 
@@ -8,7 +8,7 @@ A Helm chart for testing library chart
 
 | Repository | Name | Version |
 |------------|------|---------|
-| file://../library-chart | library-chart | 4.4.1 |
+| file://../library-chart | library-chart | 4.4.2 |
 
 ## Values
 
