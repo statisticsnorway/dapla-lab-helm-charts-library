@@ -11,7 +11,7 @@ return the pod configuration for oauth2-proxy which will run as a sidecar in our
 */}}
 {{- define "library-chart.oauth2ProxyPod" -}}
 name: oauth2-proxy
-image: europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-platform-docker/oauth2-proxy:v7.8.2
+image: europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-platform-docker/bitnami/oauth2-proxy:v7.8.2
 imagePullPolicy: IfNotPresent
 ports:
   - name: http-oauth2
