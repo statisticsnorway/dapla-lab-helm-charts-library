@@ -13,7 +13,7 @@ spec:
   - .
   hosts:
   {{- if or .Values.avansert.parquedit.enabled .Values.avansert.database.instance }}
-    - "sqladmin.googleapis.com"
+  - "sqladmin.googleapis.com"
   {{- end -}}
   {{- toYaml .Values.security.serviceEntry.hosts | nindent 2 }}
   location: MESH_EXTERNAL
